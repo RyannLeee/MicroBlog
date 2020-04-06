@@ -17,6 +17,9 @@
 		A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE13243B0BE200EDF874 /* MessageTableViewController.swift */; };
 		A54EDE16243B0BE900EDF874 /* DiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE15243B0BE900EDF874 /* DiscoveryTableViewController.swift */; };
 		A54EDE18243B0BF200EDF874 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE17243B0BF200EDF874 /* ProfileTableViewController.swift */; };
+		A54EDE1B243B1DB400EDF874 /* UiButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE1A243B1DB400EDF874 /* UiButton+Extension.swift */; };
+		A54EDE1E243B248F00EDF874 /* VisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE1D243B248F00EDF874 /* VisitorTableViewController.swift */; };
+		A54EDE20243B273100EDF874 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE1F243B273100EDF874 /* VisitorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		A54EDE13243B0BE200EDF874 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		A54EDE15243B0BE900EDF874 /* DiscoveryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryTableViewController.swift; sourceTree = "<group>"; };
 		A54EDE17243B0BF200EDF874 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		A54EDE1A243B1DB400EDF874 /* UiButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButton+Extension.swift"; sourceTree = "<group>"; };
+		A54EDE1D243B248F00EDF874 /* VisitorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorTableViewController.swift; sourceTree = "<group>"; };
+		A54EDE1F243B273100EDF874 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 		A54EDE08243B0A1700EDF874 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A54EDE19243B1D9F00EDF874 /* Extension */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 		A54EDE0A243B0AA100EDF874 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A54EDE1C243B246700EDF874 /* Visitor */,
 				A54EDE0F243B0BAB00EDF874 /* MainViewController.swift */,
 			);
 			path = Main;
@@ -157,6 +165,23 @@
 				A54EDE17243B0BF200EDF874 /* ProfileTableViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A54EDE19243B1D9F00EDF874 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE1A243B1DB400EDF874 /* UiButton+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A54EDE1C243B246700EDF874 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE1D243B248F00EDF874 /* VisitorTableViewController.swift */,
+				A54EDE1F243B273100EDF874 /* VisitorView.swift */,
+			);
+			path = Visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +260,9 @@
 				A54EDE12243B0BD500EDF874 /* HomeTableViewController.swift in Sources */,
 				A54EDE10243B0BAB00EDF874 /* MainViewController.swift in Sources */,
 				A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */,
+				A54EDE1B243B1DB400EDF874 /* UiButton+Extension.swift in Sources */,
+				A54EDE1E243B248F00EDF874 /* VisitorTableViewController.swift in Sources */,
+				A54EDE20243B273100EDF874 /* VisitorView.swift in Sources */,
 				A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */,
 				A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */,
 			);
