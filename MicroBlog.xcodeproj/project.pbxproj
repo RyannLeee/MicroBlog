@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */; };
-		A54EDDD4243AFBE900EDF874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD3243AFBE900EDF874 /* SceneDelegate.swift */; };
 		A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD5243AFBE900EDF874 /* ViewController.swift */; };
 		A54EDDD9243AFBE900EDF874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDD7243AFBE900EDF874 /* Main.storyboard */; };
 		A54EDDDB243AFBEB00EDF874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDDA243AFBEB00EDF874 /* Assets.xcassets */; };
 		A54EDDDE243AFBEB00EDF874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDDC243AFBEB00EDF874 /* LaunchScreen.storyboard */; };
+		A54EDE10243B0BAB00EDF874 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE0F243B0BAB00EDF874 /* MainViewController.swift */; };
+		A54EDE12243B0BD500EDF874 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE11243B0BD500EDF874 /* HomeTableViewController.swift */; };
+		A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE13243B0BE200EDF874 /* MessageTableViewController.swift */; };
+		A54EDE16243B0BE900EDF874 /* DiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE15243B0BE900EDF874 /* DiscoveryTableViewController.swift */; };
+		A54EDE18243B0BF200EDF874 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE17243B0BF200EDF874 /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A54EDDCE243AFBE900EDF874 /* MicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A54EDDD3243AFBE900EDF874 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A54EDDD5243AFBE900EDF874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A54EDDD8243AFBE900EDF874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A54EDDDA243AFBEB00EDF874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A54EDDDD243AFBEB00EDF874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A54EDDDF243AFBEB00EDF874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A54EDE0F243B0BAB00EDF874 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A54EDE11243B0BD500EDF874 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		A54EDE13243B0BE200EDF874 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		A54EDE15243B0BE900EDF874 /* DiscoveryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryTableViewController.swift; sourceTree = "<group>"; };
+		A54EDE17243B0BF200EDF874 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,8 @@
 		A54EDDD0243AFBE900EDF874 /* MicroBlog */ = {
 			isa = PBXGroup;
 			children = (
+				A54EDE05243B09E700EDF874 /* Classes */,
 				A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */,
-				A54EDDD3243AFBE900EDF874 /* SceneDelegate.swift */,
 				A54EDDD5243AFBE900EDF874 /* ViewController.swift */,
 				A54EDDD7243AFBE900EDF874 /* Main.storyboard */,
 				A54EDDDA243AFBEB00EDF874 /* Assets.xcassets */,
@@ -65,6 +73,90 @@
 				A54EDDDF243AFBEB00EDF874 /* Info.plist */,
 			);
 			path = MicroBlog;
+			sourceTree = "<group>";
+		};
+		A54EDE05243B09E700EDF874 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE07243B09F100EDF874 /* View */,
+				A54EDE08243B0A1700EDF874 /* Tools */,
+				A54EDE06243B09EE00EDF874 /* Model */,
+				A54EDE09243B0A5F00EDF874 /* ViewModel */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A54EDE06243B09EE00EDF874 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A54EDE07243B09F100EDF874 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE0A243B0AA100EDF874 /* Main */,
+				A54EDE0B243B0AA700EDF874 /* Home */,
+				A54EDE0C243B0AAB00EDF874 /* Message */,
+				A54EDE0D243B0ABD00EDF874 /* Discovery */,
+				A54EDE0E243B0AC400EDF874 /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A54EDE08243B0A1700EDF874 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A54EDE09243B0A5F00EDF874 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A54EDE0A243B0AA100EDF874 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE0F243B0BAB00EDF874 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A54EDE0B243B0AA700EDF874 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE11243B0BD500EDF874 /* HomeTableViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A54EDE0C243B0AAB00EDF874 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE13243B0BE200EDF874 /* MessageTableViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		A54EDE0D243B0ABD00EDF874 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE15243B0BE900EDF874 /* DiscoveryTableViewController.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		A54EDE0E243B0AC400EDF874 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A54EDE17243B0BF200EDF874 /* ProfileTableViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54EDE18243B0BF200EDF874 /* ProfileTableViewController.swift in Sources */,
+				A54EDE16243B0BE900EDF874 /* DiscoveryTableViewController.swift in Sources */,
+				A54EDE12243B0BD500EDF874 /* HomeTableViewController.swift in Sources */,
+				A54EDE10243B0BAB00EDF874 /* MainViewController.swift in Sources */,
+				A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */,
 				A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */,
 				A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */,
-				A54EDDD4243AFBE900EDF874 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJ9X94FJ52;
 				INFOPLIST_FILE = MicroBlog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SJ9X94FJ52;
 				INFOPLIST_FILE = MicroBlog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
