@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTRootNavigationController
 
 class MainViewController: UITabBarController {
 
@@ -20,7 +21,15 @@ class MainViewController: UITabBarController {
     // MARK: 视图生命周期函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NetworkTools.sharedTools.request(method: .GET, URLString: "http://httpbin.org/get", parameters: ["name": "lisi", "age": 22]) { result, error in
+            if error != nil {
+                return
+            }
+
+            print(result as Any)
+        }
+        //http://httpbin.org/get
+        //http://www.weather.com.cn/data/sk/101010100.html
         addChildViewcontrollers()
         setupComposedButton()
     }
@@ -59,7 +68,7 @@ extension MainViewController {
 
         // 设置 tintColor - 图片渲染颜色
         // 性能提升技巧 - 如果能用颜色解决，就建议用图片
-        tabBar.tintColor = .orange
+        //tabBar.tintColor = .orange
         
         addChildViewController(vc: HomeTableViewController(), title: "首页", imageName: "tabbar_home")
         addChildViewController(vc: MessageTableViewController(), title: "消息", imageName: "tabbar_message_center")
@@ -82,7 +91,7 @@ extension MainViewController {
         vc.tabBarItem.image = UIImage.init(named: imageName)
         
         // 导航控制器
-        let nav = UINavigationController.init(rootViewController: vc)
+        let nav = RTRootNavigationController.init(rootViewController: vc)
         
         addChild(nav)
     }

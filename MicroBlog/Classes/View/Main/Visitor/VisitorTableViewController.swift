@@ -31,6 +31,26 @@ class VisitorTableViewController: UITableViewController {
         // 替换根视图
         visitorView = VisitorView()
         view = visitorView
+        
+        // 添加监听方法
+        visitorView?.registerButton.addTarget(self, action: #selector(self.visitorViewDidClickRegister), for: .touchUpInside)
+        visitorView?.loginButton.addTarget(self, action: #selector(self.visitorViewDidClickLogin), for: .touchUpInside)
+        
+        // 设置导航栏按钮
+        navigationItem.leftBarButtonItem = .init(title: "注册", style: .plain, target: self, action: #selector(self.visitorViewDidClickRegister))
+        navigationItem.rightBarButtonItem = .init(title: "登录", style: .plain, target: self, action: #selector(self.visitorViewDidClickLogin))
+    }
+    
+}
+
+extension VisitorTableViewController {
+    
+    @objc private func visitorViewDidClickRegister() {
+        NSLog("点击注册")
+    }
+    
+    @objc private func visitorViewDidClickLogin() {
+        NSLog("点击登录")
     }
     
 }

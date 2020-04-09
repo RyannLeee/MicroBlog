@@ -10,7 +10,10 @@ import UIKit
 
 extension UIButton {
     
-    // 便利构造函数
+    /// 便利构造函数
+    /// - Parameters:
+    ///   - imageName: 图像名称
+    ///   - backImageName: 背景图像名称
     convenience init(imageName: String, backImageName: String) {
         self.init()
         
@@ -21,6 +24,27 @@ extension UIButton {
         
         // 会根据背景图片的大小调整尺寸
         sizeToFit()
+    }
+    
+    /// 便利构造函数
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - fontSize: 字体大小
+    ///   - titleColor: 标题颜色
+    ///   - backImageName: 背景图像名称
+    convenience init(title: String, fontSize: CGFloat = 15, titleColor: UIColor, backImageName: String) {
+        self.init()
+        
+        setTitle(title, for: .normal)
+        titleLabel?.font = .systemFont(ofSize: fontSize)
+        setTitleColor(titleColor, for: .normal)
+        
+        // 图片拉伸
+        let edgeInset = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
+        let image = UIImage.init(named: backImageName)?.resizableImage(withCapInsets: edgeInset)
+        
+        setBackgroundImage(image, for: .normal)
+        adjustsImageWhenHighlighted = false
     }
     
 }

@@ -70,57 +70,20 @@ class VisitorView: UIView {
     
     // MARK: 懒加载控件
     /// 图标，使用 image: 构造函数创建的 imageView 默认就是 image 的大小
-    private lazy var iconView: UIImageView = .init(image: UIImage.init(named: "visitordiscover_feed_image_smallicon"))
+    private lazy var iconView: UIImageView = .init(imageName: "visitordiscover_feed_image_smallicon")
     /// 遮罩图像
-    private lazy var maskIconView: UIImageView = .init(image: UIImage.init(named: "visitordiscover_feed_mask_smallicon"))
+    private lazy var maskIconView: UIImageView = .init(imageName: "visitordiscover_feed_mask_smallicon")
     /// 小房子
-    private lazy var homeIconView: UIImageView = .init(image: UIImage.init(named: "visitordiscover_feed_image_house"))
+    private lazy var homeIconView: UIImageView = .init(imageName: "visitordiscover_feed_image_house")
     /// 消息文字
-    private lazy var messageLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "关注一些人，回这里看看有什么惊喜"
-        label.textColor = .darkGray
-        label.font = .systemFont(ofSize: 13)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        
-        return label
-    }()
+    private lazy var messageLabel: UILabel = .init(title: "关注一些人，回这里看看有什么惊喜")
+
     /// 注册按钮
-    private lazy var registerButton: UIButton = {
-        let button = UIButton()
-        
-        button.setTitle("注册", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 15)
-        button.setTitleColor(.orange, for: .normal)
-        
-        // 图片拉伸
-        let edgeInset = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
-        let image = UIImage.init(named: "common_button_white_disable")?.resizableImage(withCapInsets: edgeInset)
-        
-        button.setBackgroundImage(image, for: .normal)
-        button.adjustsImageWhenHighlighted = false
-        
-        return button
-    }()
+    lazy var registerButton: UIButton = .init(title: "注册", titleColor: .darkGray, backImageName: "common_button_white_disable")
+
     /// 登录按钮
-    private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        
-        button.setTitle("登录", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 15)
-        button.setTitleColor(.darkGray, for: .normal)
-        
-        // 图片拉伸
-        let edgeInset = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
-        let image = UIImage.init(named: "common_button_white_disable")?.resizableImage(withCapInsets: edgeInset)
-        
-        button.setBackgroundImage(image, for: .normal)
-        button.adjustsImageWhenHighlighted = false
-        
-        return button
-    }()
+    lazy var loginButton: UIButton = .init(title: "登录", titleColor: .darkGray, backImageName: "common_button_white_disable")
+
 }
 
 extension VisitorView {
@@ -169,6 +132,7 @@ extension VisitorView {
         addConstraint(.init(item: loginButton, attribute: .top, relatedBy: .equal, toItem: messageLabel, attribute: .bottom, multiplier: 1.0, constant: 16))
         addConstraint(.init(item: loginButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100))
         addConstraint(.init(item: loginButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 36))
+        
         // 6.遮罩图像
         /**
          VFL : 可视化格式语言

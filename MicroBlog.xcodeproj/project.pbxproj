@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50FAD13243F51B30051764C /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD12243F51B30051764C /* UILabel+Extension.swift */; };
+		A50FAD15243F53920051764C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD14243F53920051764C /* UIImageView+Extension.swift */; };
+		A50FAD17243F5A560051764C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD16243F5A560051764C /* Common.swift */; };
+		A50FAD19243F69B00051764C /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD18243F69B00051764C /* NetworkTools.swift */; };
 		A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */; };
 		A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD5243AFBE900EDF874 /* ViewController.swift */; };
 		A54EDDD9243AFBE900EDF874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDD7243AFBE900EDF874 /* Main.storyboard */; };
@@ -20,9 +24,16 @@
 		A54EDE1B243B1DB400EDF874 /* UiButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE1A243B1DB400EDF874 /* UiButton+Extension.swift */; };
 		A54EDE1E243B248F00EDF874 /* VisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE1D243B248F00EDF874 /* VisitorTableViewController.swift */; };
 		A54EDE20243B273100EDF874 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDE1F243B273100EDF874 /* VisitorView.swift */; };
+		DD1E267F2213A17B8553AFA3 /* Pods_MicroBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AF5E42E1B79C39DCBB0507 /* Pods_MicroBlog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C028D1B8E3082C7BC71A943 /* Pods-MicroBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroBlog.release.xcconfig"; path = "Target Support Files/Pods-MicroBlog/Pods-MicroBlog.release.xcconfig"; sourceTree = "<group>"; };
+		4CED9AA0888E4DA89A9B16CF /* Pods-MicroBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroBlog.debug.xcconfig"; path = "Target Support Files/Pods-MicroBlog/Pods-MicroBlog.debug.xcconfig"; sourceTree = "<group>"; };
+		A50FAD12243F51B30051764C /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		A50FAD14243F53920051764C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		A50FAD16243F5A560051764C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A50FAD18243F69B00051764C /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		A54EDDCE243AFBE900EDF874 /* MicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54EDDD5243AFBE900EDF874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +49,7 @@
 		A54EDE1A243B1DB400EDF874 /* UiButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButton+Extension.swift"; sourceTree = "<group>"; };
 		A54EDE1D243B248F00EDF874 /* VisitorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorTableViewController.swift; sourceTree = "<group>"; };
 		A54EDE1F243B273100EDF874 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		B7AF5E42E1B79C39DCBB0507 /* Pods_MicroBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MicroBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1E267F2213A17B8553AFA3 /* Pods_MicroBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9C7AF077EDBF4C1D11CD98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7AF5E42E1B79C39DCBB0507 /* Pods_MicroBlog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77F42B6D50D7C73926E6308B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CED9AA0888E4DA89A9B16CF /* Pods-MicroBlog.debug.xcconfig */,
+				0C028D1B8E3082C7BC71A943 /* Pods-MicroBlog.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A54EDDC5243AFBE900EDF874 = {
 			isa = PBXGroup;
 			children = (
 				A54EDDD0243AFBE900EDF874 /* MicroBlog */,
 				A54EDDCF243AFBE900EDF874 /* Products */,
+				77F42B6D50D7C73926E6308B /* Pods */,
+				4D9C7AF077EDBF4C1D11CD98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +146,8 @@
 		A54EDE08243B0A1700EDF874 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A50FAD16243F5A560051764C /* Common.swift */,
+				A50FAD18243F69B00051764C /* NetworkTools.swift */,
 				A54EDE19243B1D9F00EDF874 /* Extension */,
 			);
 			path = Tools;
@@ -170,7 +204,9 @@
 		A54EDE19243B1D9F00EDF874 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A50FAD12243F51B30051764C /* UILabel+Extension.swift */,
 				A54EDE1A243B1DB400EDF874 /* UiButton+Extension.swift */,
+				A50FAD14243F53920051764C /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A54EDDE2243AFBEB00EDF874 /* Build configuration list for PBXNativeTarget "MicroBlog" */;
 			buildPhases = (
+				5DE1AA2D23F0FF80E64AF235 /* [CP] Check Pods Manifest.lock */,
 				A54EDDCA243AFBE900EDF874 /* Sources */,
 				A54EDDCB243AFBE900EDF874 /* Frameworks */,
 				A54EDDCC243AFBE900EDF874 /* Resources */,
+				1E0FE04F323D9F5A6ECD7827 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,7 +258,7 @@
 				};
 			};
 			buildConfigurationList = A54EDDC9243AFBE900EDF874 /* Build configuration list for PBXProject "MicroBlog" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -250,16 +288,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E0FE04F323D9F5A6ECD7827 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MicroBlog/Pods-MicroBlog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MicroBlog/Pods-MicroBlog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MicroBlog/Pods-MicroBlog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DE1AA2D23F0FF80E64AF235 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MicroBlog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A54EDDCA243AFBE900EDF874 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50FAD19243F69B00051764C /* NetworkTools.swift in Sources */,
+				A50FAD13243F51B30051764C /* UILabel+Extension.swift in Sources */,
 				A54EDE18243B0BF200EDF874 /* ProfileTableViewController.swift in Sources */,
+				A50FAD17243F5A560051764C /* Common.swift in Sources */,
 				A54EDE16243B0BE900EDF874 /* DiscoveryTableViewController.swift in Sources */,
 				A54EDE12243B0BD500EDF874 /* HomeTableViewController.swift in Sources */,
 				A54EDE10243B0BAB00EDF874 /* MainViewController.swift in Sources */,
 				A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */,
+				A50FAD15243F53920051764C /* UIImageView+Extension.swift in Sources */,
 				A54EDE1B243B1DB400EDF874 /* UiButton+Extension.swift in Sources */,
 				A54EDE1E243B248F00EDF874 /* VisitorTableViewController.swift in Sources */,
 				A54EDE20243B273100EDF874 /* VisitorView.swift in Sources */,
@@ -406,6 +486,7 @@
 		};
 		A54EDDE3243AFBEB00EDF874 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CED9AA0888E4DA89A9B16CF /* Pods-MicroBlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -425,6 +506,7 @@
 		};
 		A54EDDE4243AFBEB00EDF874 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C028D1B8E3082C7BC71A943 /* Pods-MicroBlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
