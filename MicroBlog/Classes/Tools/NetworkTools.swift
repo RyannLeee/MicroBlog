@@ -23,7 +23,10 @@ class NetworkTools: AFHTTPSessionManager {
     private let appSecret = "7688004be36d1c5e51afbbb0a63b8aae"
     private let redirectUrl = "http://www.yuanlee.cc"
     
-    // 类似于 OC 的 typeDefine，网络请求完成回调
+    /// 类似于 OC 的 typeDefine，网络请求完成回调
+    /// - Parameters:
+    ///   - result: 返回的数据
+    ///   - error: 返回的错误信息
     typealias LEERequestCallBack = (_ result: Any?, _ error: Error?) -> (Void)
     
     // 单例
@@ -51,8 +54,9 @@ extension NetworkTools {
     }
     
     /// 加载 AccessToken
-    /// - Parameter code: 获取到的授权码
-    /// - finished: 完成回调
+    /// - Parameters:
+    ///   - code: 获取到的授权码
+    ///   - finished: 完成回调
     internal func loadAccessToken(code: String, finished: @escaping LEERequestCallBack) {
         let urlString = "https://api.weibo.com/oauth2/access_token"
         let params = ["client_id": appKey,
@@ -73,8 +77,6 @@ extension NetworkTools {
     ///   - URLString: URLString
     ///   - parameters: 参数字典
     ///   - finished: 完成回调
-    ///   - result: 返回的数据
-    ///   - error: 返回的错误信息
     private func request(method: LEERequestMethod, URLString: String, parameters: Any? = nil, finished: @escaping LEERequestCallBack) {
         
         // 定义成功回调
