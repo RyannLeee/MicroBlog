@@ -21,15 +21,7 @@ class MainViewController: UITabBarController {
     // MARK: 视图生命周期函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkTools.sharedTools.request(method: .GET, URLString: "http://httpbin.org/get", parameters: ["name": "lisi", "age": 22]) { result, error in
-            if error != nil {
-                return
-            }
-
-            print(result as Any)
-        }
-        //http://httpbin.org/get
-        //http://www.weather.com.cn/data/sk/101010100.html
+        
         addChildViewcontrollers()
         setupComposedButton()
     }

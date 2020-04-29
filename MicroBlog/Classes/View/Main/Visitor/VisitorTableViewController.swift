@@ -50,7 +50,10 @@ extension VisitorTableViewController {
     }
     
     @objc private func visitorViewDidClickLogin() {
-        NSLog("点击登录")
+        let vc = OAuthViewController()
+        let nav = RTRootNavigationController.init(rootViewController: vc)
+        isIPhone ? (nav.modalPresentationStyle = .fullScreen) : nil
+        present(nav, animated: true, completion: nil)
     }
     
 }
