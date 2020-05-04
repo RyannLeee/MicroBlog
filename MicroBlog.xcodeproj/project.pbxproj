@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50C6BBC2460107200D9F2C1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C6BBB2460107200D9F2C1 /* UserAccount.swift */; };
 		A50FAD13243F51B30051764C /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD12243F51B30051764C /* UILabel+Extension.swift */; };
 		A50FAD15243F53920051764C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD14243F53920051764C /* UIImageView+Extension.swift */; };
 		A50FAD17243F5A560051764C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD16243F5A560051764C /* Common.swift */; };
 		A50FAD19243F69B00051764C /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD18243F69B00051764C /* NetworkTools.swift */; };
+		A52FDCEA2460588F0023D450 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */; };
 		A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */; };
 		A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD5243AFBE900EDF874 /* ViewController.swift */; };
 		A54EDDD9243AFBE900EDF874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDD7243AFBE900EDF874 /* Main.storyboard */; };
@@ -32,10 +34,12 @@
 /* Begin PBXFileReference section */
 		0C028D1B8E3082C7BC71A943 /* Pods-MicroBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroBlog.release.xcconfig"; path = "Target Support Files/Pods-MicroBlog/Pods-MicroBlog.release.xcconfig"; sourceTree = "<group>"; };
 		4CED9AA0888E4DA89A9B16CF /* Pods-MicroBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroBlog.debug.xcconfig"; path = "Target Support Files/Pods-MicroBlog/Pods-MicroBlog.debug.xcconfig"; sourceTree = "<group>"; };
+		A50C6BBB2460107200D9F2C1 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		A50FAD12243F51B30051764C /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		A50FAD14243F53920051764C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		A50FAD16243F5A560051764C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A50FAD18243F69B00051764C /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		A54EDDCE243AFBE900EDF874 /* MicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54EDDD5243AFBE900EDF874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,8 +126,8 @@
 		A54EDE05243B09E700EDF874 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A54EDE07243B09F100EDF874 /* View */,
 				A54EDE08243B0A1700EDF874 /* Tools */,
+				A54EDE07243B09F100EDF874 /* View */,
 				A54EDE06243B09EE00EDF874 /* Model */,
 				A54EDE09243B0A5F00EDF874 /* ViewModel */,
 			);
@@ -133,6 +137,7 @@
 		A54EDE06243B09EE00EDF874 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A50C6BBB2460107200D9F2C1 /* UserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		A54EDE09243B0A5F00EDF874 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A50FAD19243F69B00051764C /* NetworkTools.swift in Sources */,
+				A52FDCEA2460588F0023D450 /* UserAccountViewModel.swift in Sources */,
 				A50FAD13243F51B30051764C /* UILabel+Extension.swift in Sources */,
 				A57E71032459BCDB00EE2CEC /* LEESwiftTools.swift in Sources */,
 				A54EDE18243B0BF200EDF874 /* ProfileTableViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				A57E70FC2459B7A900EE2CEC /* OAuthViewController.swift in Sources */,
 				A54EDE16243B0BE900EDF874 /* DiscoveryTableViewController.swift in Sources */,
 				A54EDE12243B0BD500EDF874 /* HomeTableViewController.swift in Sources */,
+				A50C6BBC2460107200D9F2C1 /* UserAccount.swift in Sources */,
 				A54EDE10243B0BAB00EDF874 /* MainViewController.swift in Sources */,
 				A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */,
 				A50FAD15243F53920051764C /* UIImageView+Extension.swift in Sources */,

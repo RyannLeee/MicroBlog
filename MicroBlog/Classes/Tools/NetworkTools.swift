@@ -41,6 +41,43 @@ class NetworkTools: AFHTTPSessionManager {
         
     }()
     
+    /// 返回 token 字典
+    private var tokenDic: [String : Any]? {
+        
+        // 判断 token 是否有效
+        if let token = UserAccountViewModel.sharedUserAccount.accessToken {
+            return ["access_token" : token]
+        }
+        
+        return nil
+    }
+    
+}
+
+// MARK: 用户相关方法
+extension NetworkTools {
+    
+    /// 根据用户ID获取用户信息
+    /// - Parameters:
+    ///   - uid: 需要查询的用户ID。
+    ///   - finished: 完成回调
+    /// - see: [https://open.weibo.com/wiki/2/users/show](https://open.weibo.com/wiki/2/users/show)
+    func loadUserInfo(uid: String, finished: @escaping LEERequestCallBack) {
+        
+        // 1. 获取 token 字典
+        guard var params = tokenDic else {
+            // 如果字典为 nil ，通知调用方 token 无效
+            finished(nil, NSError.init(domain: "cc.yuanlee.error", code: -1001, userInfo: ["message" : "token 为空"]))
+            return
+        }
+        
+        // 2. 处理网络参数
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        params["uid"] = uid
+        
+        request(method: .GET, URLString: urlString, parameters: params, finished: finished)
+    }
+    
 }
 
 // MARK: 封装 OAuth 相关方法
@@ -53,10 +90,11 @@ extension NetworkTools {
         return URL.init(string: urlSring)!
     }
     
-    /// 加载 AccessToken
+    /// OAuth 获取 AccessToken
     /// - Parameters:
     ///   - code: 获取到的授权码
     ///   - finished: 完成回调
+    /// - see: [https://open.weibo.com/wiki/Oauth2/access_token](https://open.weibo.com/wiki/Oauth2/access_token)
     internal func loadAccessToken(code: String, finished: @escaping LEERequestCallBack) {
         let urlString = "https://api.weibo.com/oauth2/access_token"
         let params = ["client_id": appKey,

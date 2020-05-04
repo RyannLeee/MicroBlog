@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 /// 访客视图，用户未登录时显示的界面
 class VisitorView: UIView {
@@ -91,7 +92,7 @@ extension VisitorView {
     /// 设置界面
     private func setupUI() {
         
-        // 1.添加控件
+        // a.添加控件
         addSubview(iconView)
         addSubview(maskIconView)
         addSubview(homeIconView)
@@ -99,18 +100,61 @@ extension VisitorView {
         addSubview(registerButton)
         addSubview(loginButton)
         
-        // 2.设置自动布局
-        /**
-         - 添加约束需要添加到父视图上
-         - 子视图最好有一个统一的参照物
-         */
-        // translatesAutoresizingMaskIntoConstraints 的默认值是 true，支持使用 setFrame 的方式设置位置
-        // false - 支持使用自动布局来设置控件位置
-        
-        for v in subviews {
-            v.translatesAutoresizingMaskIntoConstraints = false
+        // b.设置自动布局
+        // 1.图标
+        // make 理解为要添加的约束对象
+        iconView.snp.makeConstraints { (make) in
+            // 指定 centerX 属性 等于 ‘参照对象’
+            make.centerX.equalTo(self)
+            make.centerY.equalTo(self).offset(-60)
+        }
+        // 2.小房子
+        homeIconView.snp.makeConstraints { (make) in
+            make.center.equalTo(iconView)
+        }
+        // 3.消息文字
+        messageLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(iconView)
+            make.top.equalTo(iconView.snp.bottom).offset(16)
+            make.width.equalTo(224)
+            make.height.equalTo(36)
+        }
+        // 4.注册按钮
+        registerButton.snp.makeConstraints { (make) in
+            make.left.equalTo(messageLabel.snp.left)
+            make.top.equalTo(messageLabel.snp.bottom).offset(16)
+            make.width.equalTo(100)
+            make.height.equalTo(36)
+        }
+        // 5.登录按钮
+        loginButton.snp.makeConstraints { (make) in
+            make.right.equalTo(messageLabel.snp.right)
+            make.top.equalTo(registerButton)
+            make.width.equalTo(registerButton)
+            make.height.equalTo(registerButton)
+        }
+        // 6.遮罩图像
+        maskIconView.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.left.equalTo(self)
+            make.right.equalTo(self)
+            make.bottom.equalTo(registerButton)
         }
         
+        // 设置背景颜色 - 灰度图 R = G = B, 在 UI 元素中，大多数都使用灰度图，或者纯色图（安全色）
+        backgroundColor = .init(white: 237.0 / 255.0, alpha: 1.0)
+        
+        /*
+         /**
+          - 添加约束需要添加到父视图上
+          - 子视图最好有一个统一的参照物
+          */
+         // translatesAutoresizingMaskIntoConstraints 的默认值是 true，支持使用 setFrame 的方式设置位置
+         // false - 支持使用自动布局来设置控件位置
+         
+         for v in subviews {
+             v.translatesAutoresizingMaskIntoConstraints = false
+         }
         // 1.图标
         addConstraint(NSLayoutConstraint.init(item: iconView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint.init(item: iconView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
@@ -146,9 +190,7 @@ extension VisitorView {
          */
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[mask]-0-|", options: [], metrics: nil, views: ["mask": maskIconView]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[mask]-(btnHeight)-[regButton]", options: [], metrics: ["btnHeight": -36], views: ["mask": maskIconView, "regButton": registerButton]))
-        
-        // 设置背景颜色 - 灰度图 R = G = B, 在 UI 元素中，大多数都使用灰度图，或者纯色图（安全色）
-        backgroundColor = .init(white: 237.0 / 255.0, alpha: 1.0)
+        */
     }
     
 }

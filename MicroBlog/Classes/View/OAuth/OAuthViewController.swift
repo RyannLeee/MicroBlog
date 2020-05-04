@@ -67,19 +67,17 @@ extension OAuthViewController: WKUIDelegate, WKNavigationDelegate {
         NSLog("授权码是:" + code)
         
         // 4. 加载 AccessToken
-        NetworkTools.sharedTools.loadAccessToken(code: String(code)) { (result, error) -> (Void) in
-            
-            // 1> 判断错误
-            if error != nil {
-                NSLog("出错了")
-                return
+        UserAccountViewModel.sharedUserAccount.loadAccessToken(code: String(code)) { isSuccessed in
+            if isSuccessed {
+                NSLog("获取AccessToken成功了")
+                NSLog(UserAccountViewModel.sharedUserAccount.account)
+            } else {
+                NSLog("获取AccessToken失败了")
             }
-            
-            // 2> 输出结果
-            NSLog("result:\(String(describing: result))")
         }
         
         // 是 yuanlee.cc 就取消加载
         decisionHandler(.cancel)
     }
+    
 }
