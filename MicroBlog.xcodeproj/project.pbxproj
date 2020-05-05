@@ -13,6 +13,7 @@
 		A50FAD17243F5A560051764C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD16243F5A560051764C /* Common.swift */; };
 		A50FAD19243F69B00051764C /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD18243F69B00051764C /* NetworkTools.swift */; };
 		A52FDCEA2460588F0023D450 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */; };
+		A52FDCED2461945F0023D450 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FDCEC2461945F0023D450 /* WelcomeViewController.swift */; };
 		A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */; };
 		A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD5243AFBE900EDF874 /* ViewController.swift */; };
 		A54EDDD9243AFBE900EDF874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDD7243AFBE900EDF874 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		A50FAD16243F5A560051764C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A50FAD18243F69B00051764C /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		A52FDCEC2461945F0023D450 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A54EDDCE243AFBE900EDF874 /* MicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54EDDD5243AFBE900EDF874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 				0C028D1B8E3082C7BC71A943 /* Pods-MicroBlog.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A52FDCEB246194330023D450 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				A52FDCEC2461945F0023D450 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		A54EDDC5243AFBE900EDF874 = {
@@ -177,8 +187,9 @@
 		A54EDE0A243B0AA100EDF874 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A54EDE1C243B246700EDF874 /* Visitor */,
 				A54EDE0F243B0BAB00EDF874 /* MainViewController.swift */,
+				A54EDE1C243B246700EDF874 /* Visitor */,
+				A52FDCEB246194330023D450 /* Welcome */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 				A54EDE20243B273100EDF874 /* VisitorView.swift in Sources */,
 				A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */,
 				A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */,
+				A52FDCED2461945F0023D450 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuanlee.MicroBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MicroBlog/MicroBlog-Bridging-Header.h";
@@ -548,6 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuanlee.MicroBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MicroBlog/MicroBlog-Bridging-Header.h";

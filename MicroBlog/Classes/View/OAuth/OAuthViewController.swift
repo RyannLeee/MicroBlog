@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 /// 用户登录控制器
 class OAuthViewController: UIViewController {
@@ -16,6 +17,7 @@ class OAuthViewController: UIViewController {
     
     // MARK: 监听方法
     @objc private func close() {
+        SVProgressHUD.dismiss()
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
@@ -57,6 +59,7 @@ extension OAuthViewController: WKUIDelegate, WKNavigationDelegate {
         // 2. 从 url 中提取 “code=” 是否存在
         guard let query = url.query, query.hasPrefix("code=") else {
             NSLog("取消授权")
+            self.close()
             decisionHandler(.cancel)
             return
         }
@@ -68,16 +71,34 @@ extension OAuthViewController: WKUIDelegate, WKNavigationDelegate {
         
         // 4. 加载 AccessToken
         UserAccountViewModel.sharedUserAccount.loadAccessToken(code: String(code)) { isSuccessed in
-            if isSuccessed {
-                NSLog("获取AccessToken成功了")
-                NSLog(UserAccountViewModel.sharedUserAccount.account)
-            } else {
+            if !isSuccessed {
                 NSLog("获取AccessToken失败了")
+                
+                SVProgressHUD.showInfo(withStatus: "您的网络不给力")
+                delay(1) { self.close() }
+                return
+            }
+            
+            NSLog("获取AccessToken成功了")
+            NSLog(UserAccountViewModel.sharedUserAccount.account)
+            
+            // dismiss 方法不会立即销毁控制器
+            self.dismiss(animated: false) {
+                // 通知中心是同步的 - 一旦发送通知，会先执行监听方法，执行结束后，再执行后续代码
+                NotificationCenter.default.post(name: NSNotification.Name(LEESwitchRootViewControllerNotification), object: "welcome")
             }
         }
         
         // 是 yuanlee.cc 就取消加载
         decisionHandler(.cancel)
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        SVProgressHUD.show()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        SVProgressHUD.dismiss()
     }
     
 }

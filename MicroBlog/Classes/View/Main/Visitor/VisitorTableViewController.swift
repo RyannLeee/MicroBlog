@@ -11,7 +11,7 @@ import UIKit
 class VisitorTableViewController: UITableViewController {
 
     /// 用户登录标记
-    private var userLogon = false//UserAccountViewModel.sharedUserAccount.userLogon
+    private var userLogon = UserAccountViewModel.sharedUserAccount.userLogon
     
     /*
      1.应用程序中有几个 visitorView？- 每个控制器各自有各自不同的访客视图！
@@ -51,7 +51,8 @@ extension VisitorTableViewController {
     
     @objc private func visitorViewDidClickLogin() {
         let vc = OAuthViewController()
-        let nav = RTRootNavigationController.init(rootViewController: vc)
+        //let nav = RTRootNavigationController.init(rootViewController: vc)
+        let nav = UINavigationController.init(rootViewController: vc)
         //isIPad ? nil : (nav.modalPresentationStyle = .fullScreen)
         nav.modalPresentationStyle = isIPad ? .formSheet : .fullScreen
         present(nav, animated: true, completion: nil)

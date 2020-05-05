@@ -23,6 +23,7 @@ class UserAccountViewModel {
     /// 用户模型
     var account: UserAccount?
     
+    // MARK: 计算型属性封装的一些小的‘业务逻辑’
     /// 返回有效的 accessToken
     var accessToken: String? {
         
@@ -33,7 +34,6 @@ class UserAccountViewModel {
         return nil
     }
     
-    
     /// 用户登录标记
     var userLogon: Bool {
         // 1. 如果 token 有值，说明登录成功
@@ -41,6 +41,10 @@ class UserAccountViewModel {
         return account?.access_token != nil && !isExpired
     }
     
+    /// 用户头像 URL
+    var avatarUrl: URL {
+        URL.init(string: account?.avatar_large ?? "")!
+    }
     
     /// 归档保存的路径 - 计算型属性(类似于有返回值的函数,可以在调用的时候让语义更清晰)
     /// 如果在 OC 中，可以通过只读属性/函数来实现

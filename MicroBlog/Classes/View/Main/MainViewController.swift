@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RTRootNavigationController
+//import RTRootNavigationController
 
 class MainViewController: UITabBarController {
 
@@ -16,7 +16,6 @@ class MainViewController: UITabBarController {
     @objc private func clickComposedButton() -> () {
         print("点击了")
     }
-    
     
     // MARK: 视图生命周期函数
     override func viewDidLoad() {
@@ -83,7 +82,8 @@ extension MainViewController {
         vc.tabBarItem.image = UIImage.init(named: imageName)
         
         // 导航控制器
-        let nav = RTRootNavigationController.init(rootViewController: vc)
+        //let nav = RTRootNavigationController.init(rootViewController: vc)
+        let nav = UINavigationController.init(rootViewController: vc)
         
         addChild(nav)
     }
