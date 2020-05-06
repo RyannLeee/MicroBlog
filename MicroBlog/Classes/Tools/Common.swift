@@ -16,15 +16,3 @@ let LEESwitchRootViewControllerNotification = "LEESwitchRootViewControllerNotifi
 
 /// 全局外观渲染颜色 -> 延展出皮肤的管理类
 let GlobalTintColor = UIColor.orange
-
-// MARK: 全局函数，可以直接使用
-/// 在主线程延迟执行函数
-/// - Parameters:
-///   - delta: 延迟时间
-///   - callFunc: 要执行的闭包
-func delay(_ delta: Int, callFunc: @escaping () -> ()) {
-    let after = DispatchTimeInterval.seconds(delta)
-    DispatchQueue.main.asyncAfter(deadline: .now() + after) {
-        callFunc()
-    }
-}

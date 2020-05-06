@@ -84,6 +84,10 @@ extension OAuthViewController: WKUIDelegate, WKNavigationDelegate {
             
             // dismiss 方法不会立即销毁控制器
             self.dismiss(animated: false) {
+                
+                // 停止指示器
+                SVProgressHUD.dismiss()
+                
                 // 通知中心是同步的 - 一旦发送通知，会先执行监听方法，执行结束后，再执行后续代码
                 NotificationCenter.default.post(name: NSNotification.Name(LEESwitchRootViewControllerNotification), object: "welcome")
             }

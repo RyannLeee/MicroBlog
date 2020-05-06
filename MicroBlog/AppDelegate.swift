@@ -9,6 +9,7 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -27,16 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // 监听通知
-        NotificationCenter.default.addObserver(
-            forName: Notification.Name(LEESwitchRootViewControllerNotification),                                                // 通知名称，通知中心用来识别通知的
-            object: nil,                        // 发送通知的对象，如果为nil，监听任何对象
-            queue: nil)                         // nil，主线程
-            { [weak self] (notification) in     // weak self，
-                NSLog(Thread.current)
-                NSLog(notification)
-                // 切换控制器
-                let vc = notification.object != nil ? WelcomeViewController() : MainViewController()
-                self?.window?.rootViewController = vc
+        addNotificationObserver(forName: LEESwitchRootViewControllerNotification) { [weak self] (notification) in
+            NSLog(Thread.current)
+            NSLog(notification)
+            // 切换控制器
+            let vc = notification.object != nil ? WelcomeViewController() : MainViewController()
+            self?.window?.rootViewController = vc
         }
         
         return true
@@ -44,9 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     deinit {
         // 注销通知 - 注销指定的通知
-        NotificationCenter.default.removeObserver(self,                       // 监听者
-          name: NSNotification.Name(LEESwitchRootViewControllerNotification), // 监听的通知
-          object: nil)                                                        // 发送通知的对象
+        removeNotificationObserver(self, name: NSNotification.Name.init(LEESwitchRootViewControllerNotification))
     }
     
     private func setupAppearance() {
