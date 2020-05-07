@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import YYModel
 
 /// 用户账号模型视图
 /*
@@ -110,7 +111,8 @@ extension UserAccountViewModel {
             }
             // 2> 输出结果 - 在 Swift 中任何 AnyObject 在使用前，必须转换类型 -> as ?/! 类型
             // 创建账户对象
-            self.account = UserAccount.init(dict: result! as! [String : Any])
+            self.account = UserAccount.yy_model(with: result! as! [String : Any])
+            //self.account = UserAccount.init(dict: result! as! [String : Any])
             self.loadUserInfo(account: self.account!, finished: finished)
         }
     }

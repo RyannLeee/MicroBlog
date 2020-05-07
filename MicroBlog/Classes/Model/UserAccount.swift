@@ -35,16 +35,22 @@ class UserAccount: NSObject, NSCoding {
     /// 用户头像地址（大图），180×180像素
     @objc var avatar_large: String?
     
-    init(dict: [String: Any]) {
+    /// 重写 init 构造函数，目的：让 YYModel 使用
+    override init() {
         super.init()
-        setValuesForKeys(dict)
     }
     
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
+//    init(dict: [String: Any]) {
+//        super.init()
+//        setValuesForKeys(dict)
+//    }
+    
+//    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
     override var description: String {
-        let keys = ["access_token", "expires_in", "expiresDate", "uid", "screen_name", "avatar_large"]
-        return dictionaryWithValues(forKeys: keys).description
+        yy_modelDescription()
+        //let keys = ["access_token", "expires_in", "expiresDate", "uid", "screen_name", "avatar_large"]
+        //return dictionaryWithValues(forKeys: keys).description
     }
     
     // MARK: ‘键值’用户信息归档和解档

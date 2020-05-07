@@ -26,17 +26,24 @@ class User: NSObject {
     /// 会员等级 1 - 6
     @objc var mbrank: Int = 0
     
-    init(dict: [String : Any]) {
+    /// 重写 init 构造函数，目的：让 YYModel 使用
+    override init() {
         super.init()
-        
-        setValuesForKeys(dict)
     }
     
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
+    // KVC 方法初始化
+//    init(dict: [String : Any]) {
+//        super.init()
+//
+//        setValuesForKeys(dict)
+//    }
+    
+    //override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
     override var description: String {
-        let keys = ["id", "screen_name", "profile_image_url", "verified_type", "mbrank"]
-        return dictionaryWithValues(forKeys: keys).description
+        yy_modelDescription()
+        //let keys = ["id", "screen_name", "profile_image_url", "verified_type", "mbrank"]
+        //return dictionaryWithValues(forKeys: keys).description
     }
     
 }
