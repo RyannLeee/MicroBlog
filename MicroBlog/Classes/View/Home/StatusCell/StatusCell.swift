@@ -33,8 +33,8 @@ class StatusCell: UITableViewCell {
                 make.width.equalTo(pictureView.bounds.width)
                 
                 // 根据配图数量，决定配图视图的顶部间距
-                let offset = viewModel?.thumbnailUrls?.count ?? 0 > 0 ? StatusCellMargin : 0
-                make.top.equalTo(contentLabel.snp.bottom).offset(offset)
+                //let offset = viewModel?.thumbnailUrls?.count ?? 0 > 0 ? StatusCellMargin : 0
+                //make.top.equalTo(contentLabel.snp.bottom).offset(offset)
             }
         }
     }
@@ -71,18 +71,18 @@ class StatusCell: UITableViewCell {
     /// 顶部视图
     private lazy var topView = StatusCellTopView()
     /// 微博正文标签
-    private lazy var contentLabel = UILabel.init(title: "微博正文", fontSize: 15, color: .darkGray, screenInset: StatusCellMargin)
+    lazy var contentLabel = UILabel.init(title: "微博正文", fontSize: 15, color: .darkGray, screenInset: StatusCellMargin)
     /// 配图视图
-    private lazy var pictureView = StatusPictureView()
+    lazy var pictureView = StatusPictureView()
     /// 底部视图
-    private lazy var bottomView = StatusCellBottomView()
+    lazy var bottomView = StatusCellBottomView()
     
 }
 
 // MARK: - 设置界面
 extension StatusCell {
     
-    private func setupUI() {
+    @objc func setupUI() {
         
         // 1. 添加控件
         contentView.addSubview(topView)
@@ -101,13 +101,6 @@ extension StatusCell {
         contentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(topView.snp.bottom).offset(StatusCellMargin)
             make.left.equalToSuperview().offset(StatusCellMargin)
-        }
-        // 配图视图
-        pictureView.snp.makeConstraints { (make) in
-            make.top.equalTo(contentLabel.snp.bottom).offset(StatusCellMargin)
-            make.left.equalTo(contentLabel)
-            make.width.equalTo(300)//(contentView.snp.width).offset(-2 * StatusCellMargin)
-            make.height.equalTo(90)
         }
         // 底部视图
         bottomView.snp.makeConstraints { (make) in

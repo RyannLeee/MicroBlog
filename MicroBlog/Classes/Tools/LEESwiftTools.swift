@@ -108,16 +108,17 @@ public func removeNotificationObserver(_ observer: Any, name: NSNotification.Nam
 /// 十六进制颜色
 /// - Parameter rgb: 十六进制数字，如 0xFFFFFF
 /// - Returns: UIColor
-public func RGBColor(_ rgb: Int) -> UIColor {
-    UIColor.init(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0, green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0, blue: ((CGFloat)(rgb & 0xFF)) / 255.0, alpha: 1.0)
-}
+//public func RGBColor(_ rgb: Int) -> UIColor {
+//    UIColor.init(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0, green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0, blue: ((CGFloat)(rgb & 0xFF)) / 255.0, alpha: 1.0)
+//}
 
-/// 十六进制颜色加 alpha 值
+/// RGBA 方式表示颜色， Alpha 默认为 1.0
 /// - Parameters:
 ///   - rgb:   十六进制数字，如 0xFFFFFF
-///   - alpha: 透明度百分比，范围: 0 ~ 1.0
+///   - alpha: 透明度百分比，范围: 0 ~ 1.0，默认为 1.0
+///     - 0 表示完全透明，1 表示完全不透明
 /// - Returns: UIColor
-public func RGBAColor(_ rgb: Int, _ alpha: CGFloat) -> UIColor {
+public func RGBColor(rgb: Int, alpha: CGFloat = 1.0) -> UIColor {
     UIColor.init(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0, green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0, blue: ((CGFloat)(rgb & 0xFF)) / 255.0, alpha: alpha)
 }
 

@@ -9,8 +9,11 @@
 import UIKit
 import SVProgressHUD
 
-/// 微博 Cell 的可重用符号
+/// 原创微博 Cell 的可重用标识符
 let StatusCellNormalID = "StatusCellNormalID"
+
+/// 转发微博 Cell 的可重用标识符
+let StatusCellRetweetID = "StatusCellRetweetID"
 
 class HomeTableViewController: VisitorTableViewController {
 
@@ -33,19 +36,31 @@ class HomeTableViewController: VisitorTableViewController {
     /// 准备表格
     private func prepareTableView() {
         // 注册可重用 Cell
-        tableView.register(StatusCell.self, forCellReuseIdentifier: StatusCellNormalID)
+        tableView.register(StatusNormalCell.self, forCellReuseIdentifier: StatusCellNormalID)
+        tableView.register(StatusRetweetCell.self, forCellReuseIdentifier: StatusCellRetweetID)
         
         // 取消分隔线
         tableView.separatorStyle = .none
         
         // 预估行高 - 需要尽量准确
         tableView.estimatedRowHeight = 400
+        
+        // 下拉刷新控件 - 默认没有
+        refreshControl = LEERefreshControl()
+        // 添加监听方法
+        refreshControl?.addTarget(self, action: #selector(self.loadData), for: .valueChanged)
+        
+        refreshControl?.backgroundColor = .clear
+        refreshControl?.tintColor = .clear
     }
     
     /// 加载微博数据
-    private func loadData() {
+    @objc private func loadData() {
         
         listViewModel.loadStatus { (isSuccessed) in
+            
+            // 关闭刷新控件
+            //self.refreshControl?.endRefreshing()
             
             if !isSuccessed {
                 SVProgressHUD.showInfo(withStatus: "加载数据错误，请稍后再试")
@@ -68,12 +83,16 @@ extension HomeTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // 不会调用行高方法
-        // tableView.dequeueReusableCell()
-        // 会调用行高方法
-        let cell = tableView.dequeueReusableCell(withIdentifier: StatusCellNormalID, for: indexPath) as! StatusCell
+        // 获取视图模型
+        let vm = listViewModel.statusList[indexPath.row]
         
-        cell.viewModel = listViewModel.statusList[indexPath.row]
+        // 不会调用行高方法 - tableView.dequeueReusableCell()
+        // 会调用行高方法
+        // 获取可重用 cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: vm.cellID, for: indexPath) as! StatusCell
+        
+        // 设置视图模型
+        cell.viewModel = vm
         
         return cell
     }

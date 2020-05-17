@@ -29,6 +29,9 @@ class Status: NSObject {
     /// 用户模型
     @objc var user: User?
     
+    /// 转发微博
+    @objc var retweeted_status: Status?
+    
     /// 重写 init 构造函数，目的：让 YYModel 使用
     override init() {
         super.init()

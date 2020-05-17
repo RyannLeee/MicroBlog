@@ -100,8 +100,28 @@ extension StatusPictureView {
         
         // b. 一张图片
         if count == 1 {
-            // TODO: - 临时设置大小
-            let size = CGSize.init(width: 150, height: 120)
+            
+            var size = CGSize.init(width: 150, height: 120)
+            
+            // 利用 SDWebImage 检查本地的缓存图像 - key 就是 url 的完整字符串
+            // SDWebImage 是如何设置缓存图片的文件名？ 完整的 URL 字符串 -> ‘MD5’
+            if let key = viewModel?.thumbnailUrls?.first?.absoluteString {
+                SDWebImageManager.shared.imageCache.queryImage(forKey: key, options: [], context: nil) { (localImage, _, _) in
+                    if localImage != nil {
+                        size = localImage!.size
+                    }
+                }
+            }
+            
+            // 过窄处理 - 针对长图
+            size.width = size.width < 40 ? 40 : size.width
+            // 过宽处理
+            if size.width < 300 {
+                let w: CGFloat = 300
+                let h = size.height * w / size.height
+                
+                size = CGSize.init(width: w, height: h)
+            }
             
             // 内部图片的大小
             layout.itemSize = size

@@ -12,6 +12,8 @@
 		A50FAD15243F53920051764C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD14243F53920051764C /* UIImageView+Extension.swift */; };
 		A50FAD17243F5A560051764C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD16243F5A560051764C /* Common.swift */; };
 		A50FAD19243F69B00051764C /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FAD18243F69B00051764C /* NetworkTools.swift */; };
+		A510F3032471290B009DD0D2 /* LEERefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510F3022471290B009DD0D2 /* LEERefreshControl.swift */; };
+		A510F30524712B63009DD0D2 /* LEERefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A510F30424712B63009DD0D2 /* LEERefreshView.xib */; };
 		A5211EC12462C50100C93664 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5211EC02462C50100C93664 /* Status.swift */; };
 		A5211EC32462E45900C93664 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5211EC22462E45900C93664 /* StatusListViewModel.swift */; };
 		A5211EC52462E7A900C93664 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5211EC42462E7A900C93664 /* User.swift */; };
@@ -21,6 +23,7 @@
 		A5211ECE2462EE0C00C93664 /* StatusCellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5211ECD2462EE0C00C93664 /* StatusCellBottomView.swift */; };
 		A52FDCEA2460588F0023D450 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */; };
 		A52FDCED2461945F0023D450 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FDCEC2461945F0023D450 /* WelcomeViewController.swift */; };
+		A5327E952466A5FB00BB94A7 /* StatusRetweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5327E942466A5FB00BB94A7 /* StatusRetweetCell.swift */; };
 		A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */; };
 		A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EDDD5243AFBE900EDF874 /* ViewController.swift */; };
 		A54EDDD9243AFBE900EDF874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54EDDD7243AFBE900EDF874 /* Main.storyboard */; };
@@ -37,6 +40,7 @@
 		A57E70FC2459B7A900EE2CEC /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E70FB2459B7A900EE2CEC /* OAuthViewController.swift */; };
 		A57E71032459BCDB00EE2CEC /* LEESwiftTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E71022459BCDB00EE2CEC /* LEESwiftTools.swift */; };
 		A59C42D32463E8E100E1FBCB /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C42D22463E8E100E1FBCB /* StatusPictureView.swift */; };
+		A5B6CB6C2466B5D000A731E1 /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6CB6B2466B5D000A731E1 /* StatusNormalCell.swift */; };
 		DD1E267F2213A17B8553AFA3 /* Pods_MicroBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AF5E42E1B79C39DCBB0507 /* Pods_MicroBlog.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +52,8 @@
 		A50FAD14243F53920051764C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		A50FAD16243F5A560051764C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A50FAD18243F69B00051764C /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		A510F3022471290B009DD0D2 /* LEERefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEERefreshControl.swift; sourceTree = "<group>"; };
+		A510F30424712B63009DD0D2 /* LEERefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LEERefreshView.xib; sourceTree = "<group>"; };
 		A5211EC02462C50100C93664 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		A5211EC22462E45900C93664 /* StatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		A5211EC42462E7A900C93664 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -57,6 +63,7 @@
 		A5211ECD2462EE0C00C93664 /* StatusCellBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCellBottomView.swift; sourceTree = "<group>"; };
 		A52FDCE92460588F0023D450 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		A52FDCEC2461945F0023D450 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		A5327E942466A5FB00BB94A7 /* StatusRetweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRetweetCell.swift; sourceTree = "<group>"; };
 		A54EDDCE243AFBE900EDF874 /* MicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54EDDD1243AFBE900EDF874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54EDDD5243AFBE900EDF874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +83,7 @@
 		A57E70FE2459B85A00EE2CEC /* MicroBlog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroBlog-Bridging-Header.h"; sourceTree = "<group>"; };
 		A57E71022459BCDB00EE2CEC /* LEESwiftTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEESwiftTools.swift; sourceTree = "<group>"; };
 		A59C42D22463E8E100E1FBCB /* StatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		A5B6CB6B2466B5D000A731E1 /* StatusNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
 		B7AF5E42E1B79C39DCBB0507 /* Pods_MicroBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MicroBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,12 +116,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A510F301247128E7009DD0D2 /* RefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				A510F3022471290B009DD0D2 /* LEERefreshControl.swift */,
+				A510F30424712B63009DD0D2 /* LEERefreshView.xib */,
+			);
+			path = RefreshView;
+			sourceTree = "<group>";
+		};
 		A5211EC82462EDC300C93664 /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
 				A5211EC92462EDE000C93664 /* StatusCell.swift */,
-				A59C42D22463E8E100E1FBCB /* StatusPictureView.swift */,
+				A5B6CB6B2466B5D000A731E1 /* StatusNormalCell.swift */,
+				A5327E942466A5FB00BB94A7 /* StatusRetweetCell.swift */,
 				A5211ECB2462EE0300C93664 /* StatusCellTopView.swift */,
+				A59C42D22463E8E100E1FBCB /* StatusPictureView.swift */,
 				A5211ECD2462EE0C00C93664 /* StatusCellBottomView.swift */,
 			);
 			path = StatusCell;
@@ -197,10 +216,10 @@
 		A54EDE08243B0A1700EDF874 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A54EDE19243B1D9F00EDF874 /* Extension */,
 				A50FAD16243F5A560051764C /* Common.swift */,
 				A50FAD18243F69B00051764C /* NetworkTools.swift */,
 				A57E71022459BCDB00EE2CEC /* LEESwiftTools.swift */,
-				A54EDE19243B1D9F00EDF874 /* Extension */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -228,6 +247,7 @@
 		A54EDE0B243B0AA700EDF874 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A510F301247128E7009DD0D2 /* RefreshView */,
 				A5211EC82462EDC300C93664 /* StatusCell */,
 				A54EDE11243B0BD500EDF874 /* HomeTableViewController.swift */,
 			);
@@ -349,6 +369,7 @@
 				A54EDDDE243AFBEB00EDF874 /* LaunchScreen.storyboard in Resources */,
 				A54EDDDB243AFBEB00EDF874 /* Assets.xcassets in Resources */,
 				A54EDDD9243AFBE900EDF874 /* Main.storyboard in Resources */,
+				A510F30524712B63009DD0D2 /* LEERefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,10 +428,12 @@
 				A50FAD17243F5A560051764C /* Common.swift in Sources */,
 				A57E70FC2459B7A900EE2CEC /* OAuthViewController.swift in Sources */,
 				A54EDE16243B0BE900EDF874 /* DiscoveryTableViewController.swift in Sources */,
+				A510F3032471290B009DD0D2 /* LEERefreshControl.swift in Sources */,
 				A54EDE12243B0BD500EDF874 /* HomeTableViewController.swift in Sources */,
 				A50C6BBC2460107200D9F2C1 /* UserAccount.swift in Sources */,
 				A5211EC52462E7A900C93664 /* User.swift in Sources */,
 				A54EDE10243B0BAB00EDF874 /* MainViewController.swift in Sources */,
+				A5B6CB6C2466B5D000A731E1 /* StatusNormalCell.swift in Sources */,
 				A5211EC12462C50100C93664 /* Status.swift in Sources */,
 				A54EDE14243B0BE200EDF874 /* MessageTableViewController.swift in Sources */,
 				A50FAD15243F53920051764C /* UIImageView+Extension.swift in Sources */,
@@ -419,6 +442,7 @@
 				A5211EC72462EBFF00C93664 /* StatusViewModel.swift in Sources */,
 				A54EDE1E243B248F00EDF874 /* VisitorTableViewController.swift in Sources */,
 				A54EDE20243B273100EDF874 /* VisitorView.swift in Sources */,
+				A5327E952466A5FB00BB94A7 /* StatusRetweetCell.swift in Sources */,
 				A5211ECE2462EE0C00C93664 /* StatusCellBottomView.swift in Sources */,
 				A54EDDD6243AFBE900EDF874 /* ViewController.swift in Sources */,
 				A54EDDD2243AFBE900EDF874 /* AppDelegate.swift in Sources */,
